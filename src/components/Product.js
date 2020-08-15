@@ -18,8 +18,9 @@ export default class Product extends Component {
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
-                  <img src={img} alt="product" className="card-img-top" />
+                  <img src={img} alt="product" className="card-img-top" height="392" width="253"/>
                 </Link>
+
                 <button
                   className="cart-btn"
                   disabled={inCart ? true : false}
@@ -52,6 +53,7 @@ export default class Product extends Component {
     );
   }
 }
+
 
 Product.propTypes = {
   product: PropTypes.shape({

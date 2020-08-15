@@ -5,6 +5,7 @@ import EmptyCart from "./EmptyCart";
 import { ProductConsumer } from "../../context";
 import CartList from "./CartList";
 import CartTotals from "./CartTotals";
+import '../feedback.css';
 
 export default class Cart extends Component {
   render() {
@@ -122,7 +123,11 @@ const Favourites=[
 ]
 function Images() {
   return (
+    <section className="spad">
     <div class="container">
+      <div class="section-title">
+				<h2>Your Favorites</h2>
+			</div>
     <div class="row">
       {Favourites.map(Favourite => (
         <div class="col-lg-3 col-sm-6">
@@ -144,5 +149,6 @@ function Images() {
       ))}
     </div>
     </div>
+    </section>
   );
 }

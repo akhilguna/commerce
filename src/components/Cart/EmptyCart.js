@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../feedback.css';
 export default function EmptyCart() {
   return (
     <div className="container mt-5">
@@ -65,7 +65,11 @@ const Favourites=[
 ]
 function Images() {
   return (
+    <section className="spad">
     <div class="container">
+      <div class="section-title">
+				<h2>Your Favorites</h2>
+			</div>
     <div class="row">
       {Favourites.map(Favourite => (
         <div class="col-lg-3 col-sm-6">
@@ -87,5 +91,6 @@ function Images() {
       ))}
     </div>
     </div>
+    </section>
   );
 }

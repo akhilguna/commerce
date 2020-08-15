@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ButtonContainer } from "../Button";
 import { authActions } from "../../store/actions/auth.actions";
+import '../feedback.css';
 
 const Header = props => {
   const { auth } = props;
 
   return (
-    <header className="containe-fluid">
+    <header>
       <div class="header-top">
 			<div class="container">
 				<div class="row">
@@ -22,24 +23,19 @@ const Header = props => {
 						<div class="user-panel">
 							<div class="up-item">
 								<i class="fa fa-profile"></i>
-								<a href="#">Sign</a> In or <a href="#">Create Account</a>
+								<a href="/">Sign</a> or <a href="/">Create Account</a>
 							</div>
-							<div class="up-item">
-								<div class="shopping-card">
-									<i class="fa fa-bag"></i>
-									<span>0</span>
-								</div>
-								<a href="#">Shopping Cart</a>
-							</div>
+						
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
       <nav className="navbar navbar-expand-lg navbar-light main-navbar">
-        <Link to="/" className="navbar-brand">
+        <div className="container">
+        {/* <Link to="/" className="navbar-brand">
           React/Redux
-        </Link>
+        </Link> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -52,33 +48,38 @@ const Header = props => {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
             {auth.uid ? (
               <React.Fragment>
+                          <ul className="navbar-nav mr-auto main-menu">
                 <li className="nav-item active">
                   <Link className=" nav-color" to="/">
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-color" onClick={props.logOut}>
-                    Log out
-                  </a>
-                </li>
-                <li className="nav-item ml-5">
-                 <Link to="/" className=" nav-color">
-                    products
-                 </Link>
-               </li>
-               <li className="nav-item ml-5">
+               <li className="nav-item">
             <Link to="/feedback" className=" nav-color">
               feedback
             </Link>
             </li>
-        
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <ul className="navbar-nav mr-auto main-menu">
+            <li className="nav-item">
+            <Link to="/cart" className="nav-color">
+            my cart
+        </Link>
+        </li>
+        <li className="nav-item">
+                  <a className="nav-color" onClick={props.logOut}>
+                    Log out
+                  </a>
+        </li>
+        </ul>
+        </form>
               </React.Fragment>
             ) : (
               <React.Fragment>
+              <ul className="navbar-nav mr-auto main-menu">
                 <li className="nav-item">
                   <Link className=" nav-color" to="/login">
                     Login
@@ -89,17 +90,11 @@ const Header = props => {
                     Register
                   </Link>
                 </li>
+                </ul>
               </React.Fragment>
             )}
-            </ul>
-            <Link to="/cart" className="ml-auto">
-          <ButtonContainer>
-            <span className="mr-2">
-              <i className="fas fa-cart-plus" />
-            </span>
-            my cart
-          </ButtonContainer>
-        </Link>
+           
+        </div>
         </div>
       </nav>
     </header>

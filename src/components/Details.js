@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ButtonContainer } from "./Button";
 import SimpleExpansionPanel from "./Panel";
 import SimpleSlider from "./Carousel";
-
+import './feedback.css';
 
 
 
@@ -52,11 +52,15 @@ export default class Details extends Component {
                   </p>
                   <p className="text-muted lead">{info}</p> */}
                   {/* buttons */}
-                  <div>
-                    <Link to="/">
+                  <div class="row">
+                    <div class="col-md-6">
+                    <Link to="/" class="site-btn">
                       <ButtonContainer>back to products</ButtonContainer>
                     </Link>
+                    </div>
+                    <div class="col-md-6">
                     <ButtonContainer
+                      class="site-btn sb-dark"
                       cart
                       disabled={inCart ? true : false}
                       onClick={() => {
@@ -66,6 +70,7 @@ export default class Details extends Component {
                     >
                       {inCart ? "in Cart" : "add to cart"}
                     </ButtonContainer>
+                    </div>
                   </div>
                   <SimpleExpansionPanel/>
                 </div>

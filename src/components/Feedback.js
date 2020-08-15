@@ -285,7 +285,11 @@ class FormComponent extends React.Component {
 
 function Images() {
   return (
+    <section className="spad">
     <div class="container">
+    <div class="section-title">
+				<h2>Your Favorites</h2>
+			</div>
     <div class="row">
       {Favourites.map(Favourite => (
         <div class="col-lg-3 col-sm-6">
@@ -307,6 +311,7 @@ function Images() {
       ))}
     </div>
     </div>
+    </section>
   );
 }
 export default FormComponent;

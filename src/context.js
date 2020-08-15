@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useEffect,useState } from "react";
 import { storeProducts, detailProduct } from "./data";
 
 const ProductContext = React.createContext();
@@ -174,6 +174,7 @@ class ProductProvider extends Component {
       };
     });
   };
+ 
 
   render() {
     return (
@@ -187,7 +188,7 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart
+          clearCart: this.clearCart,
         }}
       >
         {this.props.children}
@@ -199,3 +200,10 @@ class ProductProvider extends Component {
 const ProductConsumer = ProductContext.Consumer;
 
 export { ProductProvider, ProductConsumer };
+
+
+
+
+
+
+

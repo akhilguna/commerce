@@ -6,6 +6,10 @@ export default class SimpleSlider extends React.Component {
   render() {
  
     return (
+	<React.Fragment>
+	<div class="section-title">
+				<h2>RELATED PRODUCTS</h2>
+			</div>
       <CarouselProvider
         naturalSlideWidth={30}
         naturalSlideHeight={30}
@@ -112,6 +116,7 @@ export default class SimpleSlider extends React.Component {
                     </Slide>
         </Slider>
       </CarouselProvider>
+	  </React.Fragment>
     );
   }
 }
